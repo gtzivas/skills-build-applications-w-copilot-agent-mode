@@ -1,9 +1,13 @@
 import ResourceList from './ResourceList.jsx'
 
+const activitiesEndpoint = import.meta.env.VITE_CODESPACE_NAME
+  ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 function Activities() {
   return (
     <ResourceList
-      endpoint="/api/activities/"
+      endpoint={activitiesEndpoint}
       title="Activities"
       description="Recent training sessions from the activity log."
       fields={[

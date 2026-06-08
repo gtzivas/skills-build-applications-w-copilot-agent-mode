@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { getApiUrl, normalizeCollection } from '../api.js'
+import { normalizeCollection } from '../api.js'
 
 function formatValue(value) {
   if (value == null) {
@@ -33,7 +33,7 @@ function ResourceList({ endpoint, title, description, fields }) {
     async function loadItems() {
       try {
         setStatus('loading')
-        const response = await fetch(getApiUrl(endpoint), { signal: controller.signal })
+        const response = await fetch(endpoint, { signal: controller.signal })
 
         if (!response.ok) {
           throw new Error(`Request failed with status ${response.status}`)
