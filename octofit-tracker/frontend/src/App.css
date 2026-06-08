@@ -1,0 +1,153 @@
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 100svh;
+}
+
+.sidebar {
+  border-right: 1px solid var(--border);
+  background: linear-gradient(180deg, #102820 0%, #183d32 100%);
+  color: #f7f2df;
+  padding: 24px;
+}
+
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.brand img {
+  background: #f7f2df;
+  border-radius: 8px;
+  height: 52px;
+  object-fit: contain;
+  padding: 6px;
+  width: 52px;
+}
+
+.brand span,
+.brand strong {
+  display: block;
+  line-height: 1.05;
+}
+
+.brand span {
+  color: #c7d8c6;
+  font-size: 14px;
+}
+
+.brand strong {
+  color: #fff8dc;
+  font-family: var(--heading);
+  font-size: 24px;
+}
+
+.nav-link {
+  border-radius: 8px;
+  color: #dbe7d4;
+  font-weight: 700;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+  background: #f0b849;
+  color: #102820;
+}
+
+.content {
+  background:
+    linear-gradient(135deg, rgba(240, 184, 73, 0.18), transparent 34%),
+    linear-gradient(180deg, #fffdf5 0%, #eef4ee 100%);
+  min-width: 0;
+  padding: 32px;
+}
+
+.resource-view {
+  max-width: 1120px;
+}
+
+.resource-header {
+  align-items: end;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.resource-header h1 {
+  margin: 0 0 8px;
+}
+
+.eyebrow {
+  color: #6c7a59;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.resource-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.resource-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 40, 32, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(16, 40, 32, 0.08);
+  padding: 18px;
+}
+
+.resource-row {
+  border-bottom: 1px solid rgba(16, 40, 32, 0.1);
+  display: grid;
+  gap: 6px;
+  padding: 12px 0;
+}
+
+.resource-row:first-child {
+  padding-top: 0;
+}
+
+.resource-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.resource-row span {
+  color: #69745e;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.resource-row strong {
+  color: #14231d;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-bottom: 1px solid var(--border);
+    border-right: 0;
+  }
+
+  .content {
+    padding: 22px;
+  }
+
+  .resource-header {
+    align-items: start;
+    flex-direction: column;
+  }
+}
